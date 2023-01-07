@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="static/img/logo.png" alt="GreaterWMS logo" width="200" height="auto" />
+  <img src="static/img/logo.png" alt="BigIS logo" width="200" height="auto" />
   <h1>BigIS</h1>
   <p>Open Source Bigger Inventory Management System </p>
 
