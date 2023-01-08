@@ -10,14 +10,14 @@
 
 ![Python](https://img.shields.io/badge/Python-3.9.5-yellowgreen)
 ![Django](https://img.shields.io/badge/Django-4.1.2-yellowgreen)
-![Vue](https://img.shields.io/badge/Vue-2.6.0-yellowgreen)
+![React-js](https://img.shields.io/badge/React--js-17.0.2-yellowgreen)
 ![NodeJS](https://img.shields.io/badge/NodeJS-14.19.3-yellowgreen)
 </div>
 
 [//]: # (Some Link)
 ## :rocket: Link US
 <h4>
-    <a href="https://www.56yhz.com/">Home Page</a>
+    <a href="https://www.facebook.com/profile.php?id=100071073667748">Home Page</a>
 </h4>
 <h4>
   <a href="https://github.com/sarawakdev/BigIS/issues/new?

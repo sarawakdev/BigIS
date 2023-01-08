@@ -15,7 +15,7 @@ class APIStaffViewSet(viewsets.ModelViewSet):
         list:
             Return all staff, ordered by most recently joined.
 
-        create:
+`        create:
             Create a new staff.
 
         delete:
@@ -46,8 +46,21 @@ class APIStaffViewSet(viewsets.ModelViewSet):
         instance.save()
 
     def list(self, request, *args, **kwargs):
+        """
+        It returns the list of all the objects in the database
+        
+        :param request: The request object
+        :return: The list of all the objects in the database.
+        """
         return super().list(request, *args, **kwargs)
 
     def create(self, request, *args, **kwargs):
+        """
+        It returns the super class's create method, which is the same as the create method in the
+        ModelViewSet class
+        
+        :param request: The request object
+        :return: The super() method returns the parent class of the class that calls it.
+        """
         return super().create(request, *args, **kwargs)
             
