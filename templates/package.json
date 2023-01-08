@@ -2,7 +2,16 @@
   "name": "templates",
   "version": "0.1.0",
   "private": true,
+  "jest": {
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/(?!pascalcase|prismjs|@omtanke/react-use-event-outside/.*)"
+    ]
+  },
   "dependencies": {
+    "@hello-pangea/dnd": "^16.2.0",
+    "@omtanke/react-use-event-outside": "^1.0.1",
+    "@popperjs/core": "^2.11.6",
+    "@reactour/tour": "^3.1.8",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -10,23 +19,76 @@
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.10",
+    "apexcharts": "^3.36.3",
+    "classnames": "^2.3.2",
+    "date-fns": "^2.29.3",
+    "dayjs": "^1.11.7",
+    "formik": "^2.2.9",
+    "framer-motion": "^8.2.4",
+    "i18next": "^22.4.8",
+    "i18next-browser-languagedetector": "^7.0.1",
+    "i18next-http-backend": "^2.1.1",
+    "moment": "^2.29.4",
+    "pascalcase": "^2.0.0",
+    "payment": "^2.4.6",
+    "prismjs": "^1.29.0",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
+    "react-apexcharts": "^1.4.0",
+    "react-big-calendar": "^1.5.2",
+    "react-credit-cards": "^0.8.3",
+    "react-date-range": "^1.4.0",
     "react-dom": "^18.2.0",
+    "react-i18next": "^12.1.4",
+    "react-image-webp": "^0.8.0",
+    "react-input-mask": "^2.0.4",
+    "react-jss": "^10.9.2",
+    "react-modern-calendar-datepicker": "^3.1.6",
+    "react-notifications-component": "^4.0.1",
+    "react-number-format": "^5.1.2",
+    "react-popper": "^2.3.0",
+    "react-router-dom": "^6.6.1",
+    "react-router-hash-link": "^2.4.3",
     "react-scripts": "5.0.1",
+    "react-scrollspy": "^3.4.3",
+    "react-syntax-highlighter": "^15.5.0",
+    "react-toast-notifications": "^2.5.1",
+    "react-transition-group": "^4.4.5",
+    "react-use": "^17.4.0",
     "typescript": "^4.9.4",
+    "use-clipboard-copy": "^0.2.0",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "serve": "serve -s build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject",
+		"lint": "eslint .",
+		"lint:fix": "eslint --fix --ext .js --ext .ts --ext .jsx --ext .tsx ./src",
+		"lint:scss": "stylelint **/*.scss",
+		"lint:fix-scss": "stylelint --fix **/*.scss",
+    "icon": "svgr SvgIcons -d src/components/icon/svg-icons --typescript",
+		"storybook": "start-storybook -p 6006",
+		"storybook-withoutCache": "start-storybook -p 6006 --no-manager-cache",
+		"build-storybook": "build-storybook"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "overrides": [
+			{
+				"files": [
+					"**/*.stories.*"
+				],
+				"rules": {
+					"import/no-anonymous-default-export": "off"
+				}
+			}
+		]
   },
   "browserslist": {
     "production": [
@@ -39,5 +101,76 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^6.5.15",
+    "@storybook/addon-actions": "^6.5.15",
+    "@storybook/addon-controls": "^6.5.15",
+    "@storybook/addon-docs": "^6.5.15",
+    "@storybook/addon-essentials": "^6.5.15",
+    "@storybook/addon-knobs": "^6.4.0",
+    "@storybook/addon-links": "^6.5.15",
+    "@storybook/addons": "^6.5.15",
+    "@storybook/builder-webpack5": "^6.5.15",
+    "@storybook/manager-webpack5": "^6.5.15",
+    "@storybook/node-logger": "^6.5.15",
+    "@storybook/preset-create-react-app": "^4.1.2",
+    "@storybook/react": "^6.5.15",
+    "@storybook/theming": "^6.5.15",
+    "@svgr/cli": "^6.5.1",
+    "@types/pascalcase": "^1.0.1",
+    "@types/payment": "^2.1.4",
+    "@types/prismjs": "^1.26.0",
+    "@types/react-big-calendar": "^0.38.3",
+    "@types/react-credit-cards": "^0.8.1",
+    "@types/react-date-range": "^1.4.4",
+    "@types/react-input-mask": "^3.0.2",
+    "@types/react-router-hash-link": "^2.4.5",
+    "@types/react-scrollspy": "^3.3.5",
+    "@types/react-syntax-highlighter": "^15.5.6",
+    "@types/react-transition-group": "^4.4.5",
+    "@whitespace/storybook-addon-html": "^5.1.1",
+    "animate.css": "^4.1.1",
+    "bootstrap": "^5.2.3",
+    "eslint": "^8.31.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-flowtype": "^8.0.3",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.8.2",
+    "sass": "^1.57.1",
+    "sass-loader": "^13.2.0",
+    "storybook-addon-jsx": "^7.3.14",
+    "stylelint": "^14.16.1",
+    "stylelint-config-prettier-scss": "^0.0.1",
+    "stylelint-config-standard": "^29.0.0",
+    "stylelint-config-standard-scss": "^6.1.0",
+    "stylelint-config-twbs-bootstrap": "^7.0.0",
+    "stylelint-declaration-block-no-ignored-properties": "^2.6.0",
+    "stylelint-declaration-strict-value": "^1.9.1",
+    "stylelint-no-px": "^1.0.1",
+    "stylelint-order": "^6.0.1",
+    "stylelint-prettier": "^2.0.0",
+    "stylelint-scss": "^4.3.0",
+    "trim-newlines": "^4.0.2",
+    "webpack": "^5.75.0"
+  },
+  "resolutions": {
+		"glob-parent": ">=5.1.2",
+		"minimatch": ">=3.0.5",
+		"nth-check": ">=2.1.1",
+		"trim": "^1.0.1"
+	},
+	"overrides": {
+		"glob-parent": ">=5.1.2",
+		"minimatch": ">=3.0.5",
+		"nth-check": ">=2.1.1",
+		"trim": "^1.0.1"
+	}
 }

@@ -11,7 +11,7 @@
 ![Python](https://img.shields.io/badge/Python-3.9.5-yellowgreen)
 ![Django](https://img.shields.io/badge/Django-4.1.2-yellowgreen)
 ![React-js](https://img.shields.io/badge/React--js-17.0.2-yellowgreen)
-![NodeJS](https://img.shields.io/badge/NodeJS-14.19.3-yellowgreen)
+![TypeScript](https://img.shields.io/badge/TypeScript-4.3.5-yellowgreen)
 </div>
 
 [//]: # (Some Link)
