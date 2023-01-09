@@ -7,7 +7,7 @@ class Staff(models.Model):
     staff_position = models.CharField(max_length=255, verbose_name='Staff Position')
     staff_email = models.EmailField(max_length=255, verbose_name='Staff Email')
     staff_phone = models.CharField(max_length=255, verbose_name='Staff Phone')
-    staff_uniq_id = models.CharField(max_length=255, verbose_name='Staff Unique ID')
+    staff_uniq_id = models.CharField(max_length=255, verbose_name='Staff Unique ID', unique=True)
     is_delete = models.BooleanField(default=False, verbose_name='Is Delete')
     create_time = models.DateTimeField(auto_now_add=True, verbose_name='Create Time')
     update_time = models.DateTimeField(auto_now=True, blank=True, null=True, verbose_name='Update Time')

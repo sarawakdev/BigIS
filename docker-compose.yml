@@ -1,0 +1,45 @@
+version: '3.9'
+networks:
+  basic:
+services:
+  front:
+    # build:
+    #   context: ./
+    #   dockerfile: ./docker/front/Dockerfile
+    container_name: bigis_front
+    image: bigis/bigis_front:latest
+    restart: always
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./templates:/BigIS/templates:rw
+      - ./web_start.sh:/BigIS/web_start.sh:rw
+    command:
+      - /bin/bash
+      - -c
+      - |
+        bash /BigIS/templates/web_start.sh
+    networks:
+      - basic
+  backend:
+    # build:
+    #  context: ./
+    #  dockerfile: ./docker/backend/Dockerfile 
+    container_name: bigis_backend
+    image: bigis/bigis_backend:latest
+    restart: always
+    volumes:
+      - ./:/BigIS/:rw
+      - ./supervisord.conf:/etc/supervisor/supervisord.conf
+    ports:
+      - '8000:8000'
+    environment:
+      PYTHONUNBUFFERED: 1
+    command:
+      - /bin/bash
+      - -c
+      - |
+        bash backend_start.sh && /etc/init.d/supervisor start
+    networks:
+      - basic
+    

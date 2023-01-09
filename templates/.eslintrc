@@ -14,7 +14,7 @@
 		"react-app"
 	],
 	"parserOptions": {
-		"project": "./templates/tsconfig.json"
+		"project": "./**/tsconfig.json"
 	},
 	"plugins": ["import", "prettier", "eslint-comments", "react", "jsx-a11y", "react-hooks"],
 	"rules": {
